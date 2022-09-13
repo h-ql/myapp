@@ -1,0 +1,1 @@
+Set up console app with DI, logging and settings for .NET Core 
