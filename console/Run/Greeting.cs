@@ -6,18 +6,21 @@ public class Greeting : IGreeting
     private readonly ILogger<Greeting> _logger;
     private readonly IConfiguration _configuration;
 
-    // private readonly ILogger<Greeting> _logger;
+
     public Greeting(ILogger<Greeting> logger, IConfiguration configuration)
     {
         _logger = logger;
         _configuration = configuration;
     }
-    public void Run()
+    public void RunGreeting()
     {
-        for (int i = 0; i < _configuration.GetValue<int>("LoopTimes"); i++)
+        for (int i = 0; i < 10; i++)
         {
-            _logger.LogInformation("Run number {runNumber}", i);
+            System.Console.WriteLine("{num}", i);
+            System.Console.WriteLine("Greeting folks!");
         }
+
+
     }
 }
 

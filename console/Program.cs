@@ -17,11 +17,13 @@ var host = Host.CreateDefaultBuilder()
             .ConfigureServices((ctx,services)=>
             {
                 services.AddTransient<IGreeting, Greeting>();
+                services.AddTransient<IQueryLINQ, QueryLINQ>();
             })
             .UseSerilog()
             .Build();
-var svc = ActivatorUtilities.CreateInstance<Greeting>(host.Services);
-svc.Run();
+var go = ActivatorUtilities.CreateInstance<QueryLINQ>(host.Services);
 
+// svc.RunGreeting();
+go.RunQueryLINQ();
 
 

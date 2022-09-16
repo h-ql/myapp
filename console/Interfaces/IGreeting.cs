@@ -1,6 +1,6 @@
 public interface IGreeting
 {
-    void Run();
+    void RunGreeting();
 }
 
 
